@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/tema.css", "destination": "/api/index?path=/tema.css" },
+    { "source": "/api/:path*", "destination": "/api/index?path=/api/:path*" }
+  ]
+}
