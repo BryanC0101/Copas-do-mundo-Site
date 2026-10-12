@@ -100,6 +100,7 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 /* ── Ranking de Copas e Estatísticas ── */
+.campo-bandeira { display: flex; flex-direction: column; gap: 8px; }
 .linha-nova { margin: 12px 0; }
 .linha-nova h3 { margin: 0; }
 .nova-grade { display: grid; grid-template-columns: 2fr 1.4fr 90px auto; gap: 14px; align-items: end; }

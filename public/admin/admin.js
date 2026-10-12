@@ -229,7 +229,8 @@ function editarPublicacao(id) {
 $('#btn-cancelar-post').addEventListener('click', () => irParaAba('posts'));
 
 $$('.campo-imagem').forEach(box => {
-    $('[data-escolher]', box).addEventListener('click', () => escolherImagem(url => definirImagem(box.dataset.campo, url)));
+    const escolher = $('[data-escolher]', box);
+    if (escolher) escolher.addEventListener('click', () => escolherImagem(url => definirImagem(box.dataset.campo, url)));
     const rem = $('[data-remover]', box);
     if (rem) rem.addEventListener('click', () => definirImagem(box.dataset.campo, ''));
 });
