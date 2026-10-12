@@ -333,10 +333,11 @@
   {
     "id": 15,
     "titulo": "A natureza impede que Moldávia ganhe outra copa",
+    "tituloLista": "",
     "data": "04 set 2026",
     "dataISO": "2026-09-04",
     "categoria": "COPA DO MUNDO - FOOTBALL LIFE",
-    "imagem": "/images/chuvaNoEstádio.jpg",
+    "imagem": "/images/chuvaNoEst├ídio.jpg",
     "resumo": "",
     "subtitulo": "Tempestades e vendavais adiam copa do mundo e schorristas acusam Cláudio Goodbarras",
     "paragrafos": [
@@ -350,8 +351,7 @@
     "imagemInfo": "/images/campoMolhado.jpg",
     "legenda": "A copa será continuada no fim dessa semana, a não ser que uma chuva forte novamente caia!",
     "destaque": false,
-    "publicado": true,
-    "tituloLista": ""
+    "publicado": true
   },
   {
     "id": 16,
