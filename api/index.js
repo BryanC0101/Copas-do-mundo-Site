@@ -4,7 +4,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const copas = require('../lib/copas.js');
 
 // Regras do Ranking de Copas e das Estatísticas (embutidas aqui para a API não depender de outro arquivo).
 const copas = (() => {

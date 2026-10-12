@@ -5,6 +5,14 @@ const COR_PADRAO = '#d1b725';
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
+// Se algo der errado antes do painel abrir, mostra o motivo na tela (em vez de ficar só "Carregando…")
+function mostrarFalha(msg) {
+    const c = document.querySelector('#carregando');
+    if (c && !c.hidden) c.textContent = 'Erro ao carregar a administração: ' + msg + ' (abra o console com F12 para mais detalhes)';
+}
+window.addEventListener('error', ev => mostrarFalha(ev.message));
+window.addEventListener('unhandledrejection', ev => mostrarFalha((ev.reason && ev.reason.message) || String(ev.reason)));
+
 let csrf = null;
 let posts = [];
 let editandoId = null;
@@ -19,7 +27,12 @@ async function api(metodo, url, corpo) {
     }
     if (csrf && metodo !== 'GET') opcoes.headers['X-CSRF-Token'] = csrf;
     let resp;
-    try { resp = await fetch(url, opcoes); } catch { throw new Error('Sem conexão com o servidor.'); }
+    const ctl = new AbortController();
+    const limite = setTimeout(() => ctl.abort(), 25000);
+    opcoes.signal = ctl.signal;
+    try { resp = await fetch(url, opcoes); }
+    catch (e) { throw new Error(e && e.name === 'AbortError' ? 'O servidor demorou demais para responder.' : 'Sem conexão com o servidor.'); }
+    finally { clearTimeout(limite); }
     let dados = {};
     try { dados = await resp.json(); } catch { /* sem corpo */ }
     if (resp.status === 401 && url !== '/api/admin/login') {
@@ -106,7 +119,8 @@ async function abrirPainel() {
     mostrar('tela-painel');
     await Promise.all([carregarPosts(), carregarConfig()]);
     // As abas novas não podem impedir o painel de abrir, mesmo que a API falhe
-    await Promise.all([carregarRanking(), carregarJogadores()]);
+    carregarRanking();
+    carregarJogadores();
     irParaAba('posts');
 }
 
