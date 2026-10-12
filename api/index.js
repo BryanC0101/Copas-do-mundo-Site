@@ -50,7 +50,7 @@ function validateNews(body, existing) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(dateISO) || Number.isNaN(Date.parse(dateISO))) fail('Data inválida.');
   const paragraphs = (Array.isArray(body.paragrafos) ? body.paragrafos : []).map(p => text(p, 6000)).filter(Boolean).slice(0,120);
   if (!paragraphs.length) fail('Escreva o texto da notícia.');
-  return { id: existing ? existing.id : undefined, titulo:title, tituloLista:text(body.tituloLista,250), data:dateLabel(dateISO), dataISO, categoria:text(body.categoria,100), imagem:body.imagem, resumo:text(body.resumo,400), subtitulo:text(body.subtitulo,700), paragrafos:paragraphs, imagemInfo:imageInfo, legenda:imageInfo?text(body.legenda,400):'', destaque:!!body.destaque, publicado:body.publicado !== false };
+  return { id: existing ? existing.id : undefined, titulo:title, tituloLista:text(body.tituloLista,250), data:dateLabel(dateISO), dataISO: dateISO, categoria:text(body.categoria,100), imagem:body.imagem, resumo:text(body.resumo,400), subtitulo:text(body.subtitulo,700), paragrafos:paragraphs, imagemInfo:imageInfo, legenda:imageInfo?text(body.legenda,400):'', destaque:!!body.destaque, publicado:body.publicado !== false };
 }
 function parseBody(req) {
   return new Promise((resolve, reject) => {
