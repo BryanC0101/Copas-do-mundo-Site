@@ -614,5 +614,23 @@
     "legenda": "",
     "destaque": true,
     "publicado": true
+  },
+  {
+    "id": 26,
+    "titulo": "Andrey",
+    "tituloLista": "",
+    "data": "12 out 2026",
+    "dataISO": "2026-10-12",
+    "categoria": "COPA DO MUNDO - FOOTBALL LIFE",
+    "imagem": "/images/flags/sanmarino.svg",
+    "resumo": "",
+    "subtitulo": "muito bom mesmo esse tecnico",
+    "paragrafos": [
+      "Andrey é muito bom"
+    ],
+    "imagemInfo": "/images/flags/timorleste.svg",
+    "legenda": "muito bom mesmo",
+    "destaque": true,
+    "publicado": true
   }
 ]
