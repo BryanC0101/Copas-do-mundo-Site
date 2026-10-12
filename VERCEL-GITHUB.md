@@ -13,7 +13,7 @@ Esta versão mantém o site estático em `public/` e usa `api/index.js` como API
 |---|---|
 | `GITHUB_TOKEN` | Token fine-grained do GitHub com acesso **Contents: Read and write** somente ao repositório do site. Nunca coloque no frontend. |
 | `GITHUB_OWNER` | `BryanC0101` (ou o proprietário real do repositório) |
-| `GITHUB_REPO` | `Site-Copas` (ou o nome exato do repositório) |
+| `GITHUB_REPO` | `Site-Copas-LEgal` (confirme o nome exato do repositório conectado ao Vercel) |
 | `GITHUB_BRANCH` | `main` (ou a branch de produção do Vercel) |
 | `ADMIN_USERNAME` | Nome de usuário administrativo inicial |
 | `ADMIN_PASSWORD` | Senha administrativa inicial, com pelo menos 10 caracteres |

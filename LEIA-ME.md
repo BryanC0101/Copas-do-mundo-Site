@@ -2,7 +2,7 @@
 
 ## Como rodar no seu computador
 1. Instale o **Node.js** (versão 18 ou mais nova): https://nodejs.org
-2. Abra um terminal nesta pasta e rode:  `node server.js`  (ou dê dois cliques em `iniciar.bat` no Windows)
+2. Abra um terminal nesta pasta e rode:  `node dev-server.js`  (ou dê dois cliques em `iniciar.bat` no Windows)
 3. Abra  http://localhost:3000  → o site
 4. Abra  http://localhost:3000/admin/  → a administração
 
@@ -19,7 +19,7 @@ Não precisa instalar nada além do Node (nenhum `npm install`).
 
 ## Executar localmente ou publicar no Vercel
 
-- Para testar localmente, use `node server.js`; a versão local guarda os dados na pasta `data/`.
+- Para testar localmente, use `node dev-server.js`; a versão local guarda os dados na pasta `data/`.
 - Para publicar no Vercel com a administração funcionando e criando commits no GitHub, configure a API serverless incluída neste projeto. Siga o guia `VERCEL-GITHUB.md` e configure todas as variáveis de ambiente antes de usar o painel publicado.
 - Use HTTPS em produção. Não publique o arquivo `.env`, tokens ou segredos.
 
@@ -34,7 +34,7 @@ configuração aparece no terminal.
 
 ## Estrutura
 ```
-server.js            servidor (site + API + admin)
+dev-server.js       servidor (site + API + admin)
 public/              o site (mesmas URLs de antes: /images, /noticias, /Ranking…)
 public/admin/        painel de administração
 dados-iniciais/      notícias e configurações originais (copiadas para data/ no primeiro início)
